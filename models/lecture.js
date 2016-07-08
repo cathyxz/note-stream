@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
+        Lecture.belongsTo(models.Course, {as: 'Course', foreignKey: 'CourseId'});
         Lecture.hasMany(models.Note);
       }
   }

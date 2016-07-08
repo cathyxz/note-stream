@@ -9,12 +9,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Course.hasMany(models.Lecture, {
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
+        Course.hasMany(models.Lecture, {as: 'Lectures', foreignKey: 'CourseId'});
       }
     }
   });
