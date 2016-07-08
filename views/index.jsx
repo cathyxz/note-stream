@@ -5,7 +5,7 @@ var CourseCard = React.createClass({
   render: function() {
     return (
       <div>
-        <h3>{this.props.course.title}</h3>
+        <h3>{this.props.course.catalog_id}: {this.props.course.title}</h3>
         <p>{this.props.course.semester}</p>
         <p>{this.props.course.description}</p>
       </div>
@@ -19,9 +19,8 @@ var Index = React.createClass({
       <DefaultLayout>
         <div>
           <h1>Note Stream</h1>
-          <h2>Courses</h2>
             {this.props.courses.map(function(course) {
-              return <CourseCard course={course}/>;
+              return <CourseCard key={course.id} course={course}/>;
             })}
         </div>
       </DefaultLayout>
