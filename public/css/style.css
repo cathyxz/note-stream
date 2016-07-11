@@ -10,3 +10,9 @@ a {
 h1 {
   text-align: center;
 }
+
+#header {
+  background-color: azure;
+  position: absolute;
+  top: 0px;
+}

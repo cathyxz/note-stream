@@ -16,6 +16,7 @@ module.exports = {
 				onUpdate: "CASCADE",
 				onDelete: "RESTRICT"
       },
+      sequence: Sequelize.INTEGER,
       createdAt: {
         type: Sequelize.DATE
       },

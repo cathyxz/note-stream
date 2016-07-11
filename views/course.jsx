@@ -1,19 +1,26 @@
 var React = require('react');
 var DefaultLayout = require('./layouts/default');
 
+var CreateButton = React.createClass({
+    render: function() {
+      return (
+         <div id="create_button"><img src="/assets/create.svg"/></div>
+      );
+    }
+});
 
-
-var Index = React.createClass({
+var Course = React.createClass({
+  
   render: function() {
     return (
-      <DefaultLayout>
+      <DefaultLayout title={this.props.title}>
         <div>
-          <h1>{this.props.course.title}</h1>
           <h2>Lectures</h2>
+          <CreateButton/>
         </div>
       </DefaultLayout>
     );
   }
 });
 
-module.exports = Index;
+module.exports = Course;

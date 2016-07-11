@@ -1,15 +1,16 @@
-"use strict";
+'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Lecture = sequelize.define("Lecture", {
-    date: DataTypes.DATEONLY
+    date: DataTypes.DATEONLY,
+    sequence: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: function (models) {
         Lecture.belongsTo(models.Course, {as: 'Course', foreignKey: 'CourseId'});
         Lecture.hasMany(models.Note);
       }
-  }
+    }
   });
 
   return Lecture;
