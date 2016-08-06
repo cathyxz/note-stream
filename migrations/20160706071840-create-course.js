@@ -13,10 +13,12 @@ module.exports = {
       description: Sequelize.TEXT,
       semester: Sequelize.STRING,
       createdAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       updatedAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
   },

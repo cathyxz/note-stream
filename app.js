@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var courses  = require('./routes/courses');
+var api  = require('./routes/api');
 
 var Sequelize = require('sequelize');
 var models = require('./models');
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // routes setup
 app.use('/', routes);
-app.use('/courses', courses);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
